@@ -1,0 +1,180 @@
+body {
+    margin: 0%;
+    background-color: rgba(0, 0, 0, 0.904);
+    font: 700 20px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;;
+}
+
+.header {
+    width: 100vw;
+    height: 9vh;
+    display: flex;
+    align-items: center;
+    font-size: 300%;
+    color: white;
+}
+
+#icone {
+    width: 50px;
+    height: 50px;
+    filter: invert(84%) sepia(66%) saturate(2580%) hue-rotate(358deg) brightness(106%) contrast(103%);
+    margin-top: 3vh;
+    margin-left: 5vw;
+}
+
+.beneficio {
+    margin-left: 30vw;
+    border-bottom: 2px solid yellow;
+}
+
+.banner {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.div1 {
+    width: 48vw;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.divA {
+    width: 95%;
+    height: 30%;
+    border: 2px solid yellow;
+    border-radius: 20px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.divA p {
+    width: 70%;
+}
+
+.icone1 {
+    width: 100px;
+    height: 100px;
+}
+
+.divB {
+    width: 95%;
+    height: 30%;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.divB p {
+    width: 70%;
+}
+
+.icone2 {
+    width: 100px;
+    height: 100px;
+}
+
+.divC {
+    width: 95%;
+    height: 30%;
+    border: 2px solid yellow;
+    border-radius: 20px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.divC p {
+    width: 70%;
+}
+
+.icone3 {
+    width: 100px;
+    height: 100px;
+}
+
+.div2 {
+    width: 48vw;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.divD {
+    width: 95%;
+    height: 30%;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.divD p {
+    width: 70%;
+}
+
+.icone4 {
+    width: 100px;
+    height: 100px;
+}
+
+.divE {
+    width: 95%;
+    height: 30%;
+    border: 2px solid yellow;
+    border-radius: 20px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.divE p {
+    width: 70%;
+}
+
+.icone5 {
+    width: 100px;
+    height: 100px;
+}
+
+.divF {
+    width: 95%;
+    height: 30%;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.divF p {
+    width: 70%;
+}
+
+.icone6 {
+    width: 100px;
+    height: 100px;
+}

@@ -1,0 +1,28 @@
+function somar (a,b) {var resultado = a+b; return resultado;};
+somar(5,6);
+
+homologação do cliente (incidente e problema);
+problema(direto pra equipe 3);
+requisição (equipes 1 e 2);
+equipe 1 deve anotar todas premissas da requisição e realizar ou encaminhar para a equipe 2;
+
+Movement is medicine;
+explicar os benefícios do exercicio fisico;
+cadastrar usuarios;
+escolher (mais de um) esporte preferido;
+operações arit: somar a quantidade de votos em cada esporte e exibir no mural;
+icone de alguem correndo;
+gif de arvores;
+maça e transparência;
+No "Esportes", quando o usuario seleciona algum
+é direcionado para o login/cadastro, que por
+sua vez direciona para Esportes, exibindo mural
+
+paleta:
+5FA366
+D9D9D9
+
+Slides pretos e limpos;
+Usar fonts e PNGs,
+Utilizar formas para layouts;
+Slide mestre;

@@ -1,0 +1,126 @@
+body {
+    margin: 0%;
+    background-color: rgba(0, 0, 0, 0.904);
+}
+
+.header {
+    width: auto;
+    height: 9vh;
+    border-bottom: 2px solid aquamarine;
+    display: flex;
+    align-items: flex-end;
+}
+
+#icone {
+    width: 50px;
+    height: 50px;
+    filter: invert(84%) sepia(66%) saturate(2580%) hue-rotate(358deg) brightness(106%) contrast(103%);
+    margin-left: 5vw;
+}
+
+.banner {
+    width: auto;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;background: url(../img/running.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.alerta_erro{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    margin-left: 15px;
+  }
+  
+  .card_erro {
+    display: none;
+    background-color: rgba(128, 128, 128, 0.39);
+    color: white;
+    width: 230px;
+    position: fixed;
+    border-radius: 10px;
+    border: aquamarine 2px solid;
+    padding: 10px;
+    margin-right: 10%;
+  }
+  
+  .card_erro #mensagem_erro{
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+.cadastre {
+    width: 60vw;
+    height: 80vh;
+    border: solid 2px aquamarine;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgba(0, 0, 0, 0.603);
+}
+
+.cad {
+    color: white;
+    font-size: 35px;
+    height: 10%;
+}
+
+.campos {
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.campo1 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.campo2 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.ipt {
+    height: 25px;
+    width: 200px;
+    border-radius: 7px;
+    border: 0;
+    border-bottom: 2px solid gray;
+    background: transparent;
+    color: white;
+}
+
+input::placeholder{
+    color: gray;
+  }
+
+.botao {
+    margin-bottom: 5px;
+}
+
+.bt {
+    background-color: aquamarine;
+    border-radius: 5px;
+}
+
+.frase {
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+    font-family: none;
+}

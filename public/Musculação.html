@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musculação</title>
+    <link rel="stylesheet" href="./css/Musculação.css">
+</head>
+<body>
+    <div class="lateral">
+        <div class="usuario">
+            <div class="div1">
+                <h3 class="ola">Olá, <br><span id="b_usuario">usuário</span>!</h3>
+            </div>
+            <div class="div2">
+                <div class="escolher">
+                    <p class="p5">Esportes selecionados:</p>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="selecionar">
+            <div class="favorito" onclick="selecionar()">
+                <p class="paragrafo2">Selecionar<br>esporte<br>como favorito?</p>
+            </div>
+            <div class="voltar" onclick="modalidades()">
+                <p class="paragrafo3">voltar às<br>modalidades</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="header"><p class="p6">Musculação</p></div>
+        <div class="explica">
+            <div class="paragrafo4">A musculação é um tipo de exercício realizado com pesos de diversas cargas, 
+                amplitude e tempo de contração, o que faz dela uma atividade física indicada para pessoas de diversas
+                 idades e com diferentes objetivos.</div>
+        </div>
+
+        <div class="foto">
+            <div class="foto1"></div>
+            <div class="foto2"></div>
+            <div class="foto3"></div>
+        </div>
+
+        <div class="mural">
+            <div class="info">
+                <h3>Esporte favorito de <span id="favorito">?</span> pessoas</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var musculacaoVar = 4;
+    repeticao();
+    muralMus();
+
+    function muralMus() {
+        fetch("/usuarios/muralMus", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idMusculacaoServer: musculacaoVar
+            })
+        }).then(function (resposta1) {
+            resposta1.json().then(function(response1){
+                console.log("Recuperando valores")
+                console.log("resposta: ", resposta1);
+
+                var quantidadeMus = response1[0].quantidade;
+                console.log(quantidadeMus)
+                favorito.innerHTML = quantidadeMus;
+            })
+
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    console.log("Antes de selecionar")
+    var nomeVar = sessionStorage.NOME_USUARIO;
+    b_usuario.innerHTML = nomeVar;
+
+    if (nomeVar == undefined) {
+        b_usuario.innerHTML = "Usuário";
+    }
+
+    function modalidades() {
+        window.location = "modalidades.html"
+    }
+
+    function repeticao() {
+        var idUsuarioVar = sessionStorage.ID_USUARIO;
+
+        fetch("/usuarios/repeticao", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idUsuarioServer: idUsuarioVar
+            })
+        }).then(function (resposta) {
+            resposta.json().then(function(response){
+                console.log("Recuperando valores")
+                console.log("resposta: ", response[0].nomeEsporte);
+                for (var i = 0; i < response.length; i++){
+                    msg.innerHTML += `${response[i].nomeEsporte}<br>`;
+                }
+            })
+
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+    
+    function selecionar() {
+
+        var idUsuarioVar = sessionStorage.ID_USUARIO;
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/selecionar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                idUsuarioServer: idUsuarioVar,
+                musculacaoServer: musculacaoVar,
+            })
+        }).then(function (resposta) {
+            console.log("Recuperando valores")
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block"
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso!";
+ 
+                setTimeout(() => {
+                    window.location = "Login.html";
+                }, "2000")
+                
+                limparFormulario();
+                finalizarAguardar();
+                // finalizarAguardar();
+            } 
+            
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+</script>

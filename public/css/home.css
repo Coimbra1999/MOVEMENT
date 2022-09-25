@@ -1,0 +1,88 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: auto;;
+    background-color: rgba(0, 0, 0, 0.774);
+    
+}
+
+.header {
+    height: 10vh;
+    background-color: rgba(0, 0, 0, 0.904);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#icone {
+    width: 50px;
+    height: 50px;
+    filter: invert(84%) sepia(66%) saturate(2580%) hue-rotate(358deg) brightness(106%) contrast(103%);
+}
+
+.titulo {
+    width: 10vw;
+    height: 5vh;
+    margin-left: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: yellow;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+
+.abas {
+    display: flex;
+    width: 35vw;
+    justify-content: space-evenly;
+    margin-right: 10vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.abas a {
+    text-decoration: none;
+    color: rgb(255, 255, 0);
+}
+
+.abas a:hover{
+    border-bottom: 2px solid yellow;
+    transition: all ease-in-out 0.2s;
+}
+
+.banner {
+    width: 100vw;
+    height: 80vh;
+    border-bottom: 2px solid yellow;
+    border-top: 2px solid yellow;
+    display: flex;
+    align-items: center;
+    background: url(../img/fundo.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.paragrafo1 {
+    margin-left: 15vw;
+    margin-bottom: 15vh;
+    color: white;
+    font-size: 1.60rem;
+    font-family: serif;
+}
+
+.footer {
+    width: 100vw;
+    height: 10vh;
+    background-color: rgba(0, 0, 0, 0.904);;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}

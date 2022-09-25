@@ -1,0 +1,36 @@
+body{
+    display: flex;
+    background-color: black;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    height: 9vh;
+    border-bottom: 2px solid aquamarine;
+    display: flex;
+    align-items: flex-end;
+}
+
+#icone {
+    width: 50px;
+    height: 50px;
+    filter: invert(84%) sepia(66%) saturate(2580%) hue-rotate(358deg) brightness(106%) contrast(103%);
+    margin-left: 5vw;
+}
+
+.banner{
+    height: 85vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart{
+    position: relative; 
+    height:60%; 
+    width:60%;
+    color: white;
+}

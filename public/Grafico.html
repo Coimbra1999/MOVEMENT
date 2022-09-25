@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/Grafico.css">
+</head>
+<body>
+
+  <div class="header">
+    <a href="Index.html"><div><img id="icone" src="./icones/running (1).png"></div></a>
+</div>
+
+    <div class="banner">
+    <div class="chart">
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+</body>
+
+<script>
+  var graficoVar = 1;
+  var quantidadeFut;
+  var quantidadeVol;
+  var quantidadeBas;
+  var quantidadeMus;
+  var quantidadeSka;
+  var quantidadeSur;
+    grafico();
+
+    function grafico() {
+        fetch("/usuarios/grafico", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idGraficoServer: graficoVar
+            })
+        }).then(function (resposta) {
+            resposta.json().then(function(response){
+                console.log(response)
+                console.log("Recuperando valores")
+                console.log("resposta: ", resposta);
+                console.log(typeof(response))
+
+                quantidadeFut = response[0].quantidade;
+                quantidadeVol = response[1].quantidade;
+                quantidadeBas = response[2].quantidade;
+                quantidadeMus = response[3].quantidade;
+                quantidadeSka = response[4].quantidade;
+                quantidadeSur = response[5].quantidade;
+
+                console.log(quantidadeFut)
+                console.log(quantidadeVol)
+                console.log(quantidadeBas)
+            })
+
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    console.log("aaa",quantidadeVol)
+
+
+    const esportes = [
+      'Futebol',
+      'Volei',
+      'Basquete',
+      'Musculação',
+      'Skate',
+      'Surf',
+    ];
+
+      const dados = {
+        labels: esportes,
+        datasets: [{
+          label: 'Quantidade de votos',
+          backgroundColor: 'rgb(0, 150, 200)',
+          borderColor: 'rgb(0, 150, 200)',
+          data: [quantidadeFut, quantidadeVol, quantidadeBas, quantidadeMus, quantidadeSka, quantidadeSur],
+        }]
+      };
+
+      const config = {
+        type: 'bar',
+        data: dados,
+        options: {}
+      };
+
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+
+  </script>
+
+</html>

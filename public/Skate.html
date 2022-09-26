@@ -144,6 +144,7 @@
         }).then(function (resposta) {
             console.log("Recuperando valores")
             console.log("resposta: ", resposta);
+            window.location.reload()
 
             if (resposta.ok) {
                 cardErro.style.display = "block"

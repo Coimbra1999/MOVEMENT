@@ -11,7 +11,7 @@
 <body>
 
   <div class="header">
-    <a href="Index.html"><div><img id="icone" src="./icones/running (1).png"></div></a>
+    <a href="index.html"><div><img id="icone" src="./icones/running (1).png"></div></a>
 </div>
 
     <div class="banner">
@@ -23,12 +23,6 @@
 
 <script>
   var graficoVar = 1;
-  var quantidadeFut;
-  var quantidadeVol;
-  var quantidadeBas;
-  var quantidadeMus;
-  var quantidadeSka;
-  var quantidadeSur;
     grafico();
 
     function grafico() {
@@ -47,16 +41,19 @@
                 console.log("resposta: ", resposta);
                 console.log(typeof(response))
 
-                quantidadeFut = response[0].quantidade;
-                quantidadeVol = response[1].quantidade;
-                quantidadeBas = response[2].quantidade;
-                quantidadeMus = response[3].quantidade;
-                quantidadeSka = response[4].quantidade;
-                quantidadeSur = response[5].quantidade;
+                var quantidadeFut = response[0].quantidade;
+                var quantidadeVol = response[1].quantidade;
+                var quantidadeBas = response[2].quantidade;
+                var quantidadeMus = response[3].quantidade;
+                var quantidadeSka = response[4].quantidade;
+                var quantidadeSur = response[5].quantidade;
 
                 console.log(quantidadeFut)
                 console.log(quantidadeVol)
                 console.log(quantidadeBas)
+
+                plotarGraficos(quantidadeFut, quantidadeVol, quantidadeBas,
+                quantidadeMus, quantidadeSka, quantidadeSur)
             })
 
         }).catch(function (resposta) {
@@ -67,38 +64,39 @@
         return false;
     }
 
-    console.log("aaa",quantidadeVol)
+    function plotarGraficos(quantidadeFut, quantidadeVol, quantidadeBas,
+                quantidadeMus, quantidadeSka, quantidadeSur) {
+        const esportes = [
+        'Futebol',
+        'Volei',
+        'Basquete',
+        'Musculação',
+        'Skate',
+        'Surf',
+      ];
 
+        const dados = {
+          labels: esportes,
+          datasets: [{
+            label: 'Quantidade de votos',
+            backgroundColor: 'rgb(0, 150, 200)',
+            borderColor: 'rgb(0, 150, 200)',
+            data: [quantidadeFut, quantidadeVol, quantidadeBas, quantidadeMus, quantidadeSka, quantidadeSur],
+          }]
+        };
 
-    const esportes = [
-      'Futebol',
-      'Volei',
-      'Basquete',
-      'Musculação',
-      'Skate',
-      'Surf',
-    ];
+        const config = {
+          type: 'bar',
+          data: dados,
+          options: {}
+        };
 
-      const dados = {
-        labels: esportes,
-        datasets: [{
-          label: 'Quantidade de votos',
-          backgroundColor: 'rgb(0, 150, 200)',
-          borderColor: 'rgb(0, 150, 200)',
-          data: [quantidadeFut, quantidadeVol, quantidadeBas, quantidadeMus, quantidadeSka, quantidadeSur],
-        }]
-      };
+      const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+      );
 
-      const config = {
-        type: 'bar',
-        data: dados,
-        options: {}
-      };
-
-    const myChart = new Chart(
-      document.getElementById('myChart'),
-      config
-    );
+    }
 
   </script>
 

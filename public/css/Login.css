@@ -23,53 +23,56 @@ body {
     width: 100vw;
     height: 90vh;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    align-items: center;background: url(../img/running.jpg);
+    background: url(../img/running.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 
-.alerta_erro{
+#erro{
+    width: 20%;
+    height: 10%;
+    margin-left: 40px;
+    margin-bottom: 200px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.842);
+    border: solid 1px aquamarine;
     display: flex;
-    align-self: flex-start;
-    margin-left: 500px;
-    margin-top: 30vh;
-  }
-  
-  .card_erro {
+    justify-content: center;
+    align-items: center;
     display: none;
-    background-color: rgba(128, 128, 128, 0.39);
+    padding: 15px;
+    padding-right: 10px;
+}
+
+#mensagem_erro {
     color: white;
-    width: 230px;
-    position: fixed;
-    border-radius: 10px;
-    border: aquamarine 2px solid;
-    padding: 10px;
-  }
-  
-  .card_erro #mensagem_erro{
-    font-weight: 500;
-    font-size: 20px;
-  }
+    font-family: var(--fonte-principal);
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
 
 .login {
-    width: 35%;
-    height: 70%;
+    width: 30%;
+    height: 50%;
+    margin-left: 90px;
     border: 2px aquamarine solid;
-    border-radius: 50px;
+    border-radius: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.603);
+    justify-content: space-evenly;
+    background-color: rgba(0, 0, 0, 0.842);
     font-family: Arial, Helvetica, sans-serif;
-    position: fixed;
 }
 
 .log {
     color: white;
-    font-size: 35px;
+    font-size: 30px;
 }
 
 .campos {
@@ -80,18 +83,33 @@ body {
 }
 
 .ipt {
-    border-radius: 7px;
     height: 25px;
     width: 200px;
+    border-radius: 7px;
+    border: 0;
+    border-bottom: 2px solid gray;
+    background: transparent;
+    color: white;
+    outline: none;
+}
+
+input::placeholder{
+    color: gray;
+  }
+
+input:hover, input:focus{
+    border: 0;
+    border-bottom: 2px solid aquamarine;
 }
 
 .bt {
-    margin-top: 10vh;
     background-color: aquamarine;
-}
-
-.palavra {
-    font-size: 17px;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    padding: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif(--fonte-principal);
+    margin-top: 15px;
 }
 
 .frase {
@@ -99,4 +117,8 @@ body {
     font-size: 15px;
     text-decoration: none;
     font-family: none;
+}
+
+.frase:hover{
+    color: aquamarine;
 }

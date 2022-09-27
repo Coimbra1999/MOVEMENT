@@ -14,25 +14,23 @@
 
     <div class="banner">
 
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
-            </div>
-        </div>
-
         <div class="login">
             <div class="log">
                 <p>Entre</p>
             </div>
             <div class="campos">
-                <br><p class="palavra">E-mail</p><input id="email_ipt" class="ipt" type="text" placeholder="Seu e-mail@email.com">
+                <br><input id="email_ipt" class="ipt" type="text" placeholder="Seu e-mail@email.com">
 
-                <br><p class="palavra">Senha</p><input id="senha_ipt" class="ipt" type="password" placeholder="Senha"
+                <br><input id="senha_ipt" class="ipt" type="password" placeholder="Senha"
                 >
                 
             </div>
             <div><button class="bt" onclick="entrar()">Login</button></div>
             <h6><a href="cadastro.html" class="frase">Ainda não é cadastrado? Criar conta</a></h6>
+        </div>
+
+        <div id="erro">
+            <span id="mensagem_erro"></span>
         </div>
     </div>
 </body>
@@ -47,7 +45,10 @@
         var senhaVar = senha_ipt.value;
 
         if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
+            erro.style.display = "block";
+            setTimeout(()=>(
+                erro.style.display = 'none'
+            ), 5000);
             mensagem_erro.innerHTML = "Preencha todos os campos!";
             // finalizarAguardar();
             return false;
@@ -106,7 +107,7 @@
     }
 
     function sumirMensagem() {
-        cardErro.style.display = "none"
+        erro.style.display = "none"
     }
 
 </script>

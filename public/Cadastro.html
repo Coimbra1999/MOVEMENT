@@ -12,16 +12,10 @@
         <a href="index.html"><div><img id="icone" src="./icones/running (1).png"></div></a>
     </div>
     <div class="banner">
-        
+
         <div class="cadastre">
 
-            <div class="alerta_erro">
-                <div class="card_erro" id="cardErro">
-                    <span id="mensagem_erro"></span>
-                </div>
-            </div>
-
-            <div class="cad">Cadastre-se</div>
+            <div class="cad">Seja bem vindo!</div>
             <div class="campos">
                 <div class="campo1">
                 <br><input type="Text" class="ipt" id="nome_ipt" 
@@ -57,6 +51,10 @@
         <div class="botao"><button class="bt" onclick="cadastrar()">Cadastrar</button></div>
         <h6><a href="login.html" class="frase">Já está cadastrado? Entrar</a></h6>
         </div>
+
+        <div id="erro">
+            <span id="mensagem_erro"></span>
+        </div>
     </div>
 </body>
 </html>
@@ -75,23 +73,30 @@
         
         if (nomeVar == "" || sobrenomeVar == "" || alturaVar == "" || pesoVar == "" || sexoVar == 0 || emailVar == "" 
         || senhaVar == "" || confirmVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Preencha todos os campos";
+            erro.style.display = 'block'
+            setTimeout(()=>(
+                erro.style.display = 'none'
+            ), 5000);
+            mensagem_erro.innerHTML = "Preencha todos os campos!";
             return false;
         }
 
         else if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
-            alert('Erro email');
-            cardErro.style.display = "block"
+            erro.style.display = 'block'
+            setTimeout(()=>(
+                erro.style.display = 'none'
+            ), 5000);
             mensagem_erro.innerHTML = "Email errado. Utilize @ e '.com'!";
             // finalizarAguardar();
             return false;
         }
 
         if (senhaVar != confirmVar) {
-            alert('Erro senhas');
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "As senhas inseridas devem ser iguais para prosseguir!";
+            erro.style.display = 'block'
+            setTimeout(()=>(
+                erro.style.display = 'none'
+            ), 5000);
+            mensagem_erro.innerHTML = "As senhas devem ser iguais!";
             // finalizarAguardar();
             return false;
         }
@@ -123,7 +128,7 @@
 
             if (resposta.ok) {
                 console.log(sexo)
-                cardErro.style.display = "block"
+                erro.style.display = "block"
                 mensagem_erro.innerHTML = "Cadastro realizado com sucesso!";
  
                 setTimeout(() => {
@@ -146,6 +151,6 @@
     }
 
     function sumirMensagem() {
-        cardErro.style.display = "none"
+        erro.style.display = "none"
     }
 </script>

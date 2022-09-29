@@ -70,11 +70,11 @@ body {
 }
 
 .paragrafo1 {
-    margin-left: 15vw;
+    margin-left: 20vw;
     margin-bottom: 15vh;
     color: white;
-    font-size: 1.60rem;
-    font-family: serif;
+    font-size: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .footer {

@@ -59,3 +59,50 @@ INSERT INTO usuario (nome, sobrenome, altura, peso, email, senha) VALUES ('Lucas
 update usuario set sexo = 'f' where email = 'sandra@email.com';
 
 select * from usuario;
+
+insert into Usuario values
+		("10", "Guilherme Coimbra", "1.75", "66", "m",	"guilherme@email.com", "123"),
+        ("11", "Ivan Freire", "1.80", "70", "m",	"ivan@email.com", "123"),
+        ("12",	"Amadeu	Santos", "1.60", "72", "m",	"amadeu@email.com",	"123"),
+        ("13",	"Thiago	Soares", "1.82", "80", "m",	"thiago@email.com",	"123"),
+        ("14",	"Sandra	Coimbra", "1.55", "55", "f", "sandra@email.com", "123"),
+        ("20",	"Lucas	Oliveira", "1.88", "80", "m", "lucas@email.com", "123"),
+        ("22",	"Leandro Justino", "1.87", "85", "m", "leandro@email.com", "123"),
+        ("24",	"bruno	Santiago", "1.80", "80", "m", "bruno@email.com", "123"),
+        ("25",	"Pedro	Henrique", "1.70", "70", "m", "bolota@email.com", "123"),
+        ("27",	"Lucas	Pereira", "1.77", "75", "m", "pereira@email.com", "123"),
+        ("28",	"Analice Coimbra", "1.52", "63", "f", "ana@email.com", "123"),
+        ("31",	"Zaira	Silva", "1.55",	"65", "f", "analice@email.com",	"123"),
+        ("32",	"Lana Coimbra", "1.55",	"60", "f", "lana@email.com", "123");
+        
+insert into UsuarioEsporte values
+		(10, 1),
+        (11, 1),
+        (12, 1),
+        (13, 1),
+        (24, 1),
+        (27, 1),
+        (33, 1),
+        (10, 2),
+        (12, 2),
+        (13, 2),
+        (10, 3),
+        (12, 3),
+        (13, 3),
+        (24, 3),
+        (27, 3),
+        (33, 3),
+        (10, 4),
+        (12, 4),
+        (13, 4),
+        (14, 4),
+        (24, 4),
+        (10, 5),
+        (12, 5),
+        (13, 5),
+        (27, 5),
+        (33, 5),
+        (10, 6),
+        (12, 6),
+        (13, 6),
+        (27, 6);

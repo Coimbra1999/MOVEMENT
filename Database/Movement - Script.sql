@@ -13,7 +13,7 @@ email varchar(45) unique,
 senha varchar(45)
 ) auto_increment = 10;
 
-select * from usuario;
+select * from Usuario;
 
 create table Esporte (
 idEsporte int primary key auto_increment,
@@ -106,3 +106,5 @@ insert into UsuarioEsporte values
         (12, 6),
         (13, 6),
         (22, 6);
+        
+        select * from UsuarioEsporte join Usuario on fkUsuario = id;
